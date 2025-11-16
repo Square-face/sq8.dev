@@ -13,6 +13,8 @@
           devShell = pkgs.mkShell {
               buildInputs = with pkgs; [
                 bun
+                emmet-language-server
+                astro-language-server
               ];
           };
       }
