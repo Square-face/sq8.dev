@@ -9,6 +9,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.15.8"
+    "@fontsource-variable/fira-code": "^5.2.7",
+    "@fontsource-variable/roboto-mono": "^5.2.8",
+    "@fontsource/nebula-sans": "^5.2.2",
+    "astro": "^5.15.8",
+    "sass": "^1.94.0"
   }
 }

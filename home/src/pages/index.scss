@@ -1,0 +1,99 @@
+@import "https://www.nerdfonts.com/assets/css/webfont.css";
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Nebula Sans', sans-serif;
+  color: white;
+}
+
+body {
+  background: #050505;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin: 4em auto;
+  max-width: 80em;
+}
+
+div.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  span.name {
+    font-size: 55px;
+    font-weight: 600;
+
+    background: linear-gradient(45deg, rgba(42, 123, 155, 1) 0%, rgba(35, 250, 214, 1) 50%, rgba(42, 123, 155, 1) 100%);
+    background-clip: text;
+    background-size: 200% 200%;
+    animation: gradient 15s linear infinite;
+    color: transparent;
+  }
+}
+
+div.links{
+  display: flex;
+  flex-direction: row;
+  gap: 0.7em;
+  font-size: 1.2em;
+
+  a {
+    text-decoration: none;
+    transition: text-shadow 0.7s ease;
+
+    &.discord:hover > i {
+      color: #5865F2;
+    }
+
+    i {
+      transition: color 0.7s ease;
+    }
+
+    &:hover {
+      text-shadow: 0px 0px 1.5em white, 0px 0px 0.5em white;
+    }
+  }
+}
+
+span.div {
+  --h:10px;
+  --angle:45deg;
+
+  --width-diff: calc(var(--h) * cos(var(--angle)));
+  --gradient:  linear-gradient(45deg, rgba(42, 123, 155, 0.75), rgba(35, 250, 214, 1), rgba(42, 123, 155, 0.75), rgba(35, 250, 214, 1));
+
+  height: var(--h);
+  width: 80%;
+
+  position: relative;
+
+  background: var(--gradient);
+  background-size: calc(400% + var(--width-diff) * 2) calc(400% + var(--width-diff) * 2);
+  // animation: gradient 15s linear infinite;
+
+  &::before {
+    --h:3px;
+    --width-diff: calc(var(--h) * cos(var(--angle)));
+
+    content: "";
+    position: absolute;
+    inset: -1px; /* control the spread */
+    border-radius:3px;
+    z-index: -1;
+    background: var(--gradient);
+    background-size: calc(400% + var(--width-diff) * 3) calc(400% + var(--width-diff) * 3);
+    animation: gradient 15s linear infinite;
+    filter: blur(1px); /* control the blur */
+  }
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 0%; }
+}
